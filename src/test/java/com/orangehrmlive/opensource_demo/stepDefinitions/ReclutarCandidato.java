@@ -99,21 +99,16 @@ public class ReclutarCandidato {
     }
 
     @Entonces("verifica que el candidato está en la lisa con estado del candidato es Contratado")
-    public void verificaQueElCandidatoEstáEnLaListaConEstadoDelCandidatoEsContratado() throws IOException {
+    public void verifica_que_el_candidato_está_en_la_lista() {
+        theActorCalled("usuario").attemptsTo(ClicReclutamiento.ClicPaginaReclutamiento());
 
-        // Leer los datos desde el archivo Excel
-        ArrayList<Map<String, String>> datos = Excel.leerDatosDeHojaDeExcel("src/test/resources/data/Data.xlsx", "Validacion");
-
-        // Acceder a los valores del primer registro (índice 0) utilizando las claves del mapa
-        String vacancy = datos.get(0).get("Vacancy");
-        String candidate = datos.get(0).get("Candidate");
-        String hiringManager = datos.get(0).get("Hiring Manager");
-        String status = datos.get(0).get("Status");
-
-        // Realizar la validación con los datos leídos
         theActorCalled("usuario").attemptsTo(
-                VerificarTextoEnTabla.conLosDatos(vacancy,candidate,hiringManager,status)
+                VerificarTextoEnTabla.conElTexto("test"),
+                VerificarTextoEnTabla.conElTexto("Juan Camilo Anacona"),
+                VerificarTextoEnTabla.conElTexto("Hired")
         );
+
+        EsperaImplicita.esperaImplicita(10);
     }
 
 

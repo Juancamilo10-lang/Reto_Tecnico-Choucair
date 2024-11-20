@@ -3,8 +3,7 @@ package com.orangehrmlive.opensource_demo.questions;
 import com.orangehrmlive.opensource_demo.utils.Excel;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
-import net.serenitybdd.screenplay.questions.Text;
-import net.serenitybdd.screenplay.targets.Target;
+
 
 import java.io.IOException;
 import java.util.ArrayList;

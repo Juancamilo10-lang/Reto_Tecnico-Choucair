@@ -28,7 +28,7 @@ public class PaginaReclutarTask implements Task {
         // Validar si la fila en la tabla coincide con los valores esperados
         for (int rowIndex = 0; rowIndex < names.size(); rowIndex++) {
             actor.attemptsTo(
-                   // Ensure.that(ValidarValoresQuestions.withValues(names.get(rowIndex), lastNames.get(rowIndex), status)).isTrue()
+                    // Ensure.that(ValidarValoresQuestions.withValues(names.get(rowIndex), lastNames.get(rowIndex), status)).isTrue()
             );
         }
 
