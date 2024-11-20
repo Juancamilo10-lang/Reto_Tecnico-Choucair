@@ -103,7 +103,7 @@ public class ReclutarCandidato {
         theActorCalled("usuario").attemptsTo(ClicReclutamiento.ClicPaginaReclutamiento());
 
         theActorCalled("usuario").attemptsTo(
-                VerificarTextoEnTabla.conElTexto("sale"),
+                VerificarTextoEnTabla.conElTexto("payroll"),
                 VerificarTextoEnTabla.conElTexto("Juan Camilo Anacona"),
                 VerificarTextoEnTabla.conElTexto("Hired")
         );

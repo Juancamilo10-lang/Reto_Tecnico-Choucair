@@ -40,7 +40,7 @@ public class PaginaAgregarCandidatoTask implements Task {
         actor.attemptsTo(Enter.theValue(datosExcel.get(0).get("LASTNAME")).into(TXT_LASTNAME));
         actor.attemptsTo(
                 Click.on(DROPDOWN_VACANCY), // Hacer clic para abrir el dropdown
-                SendKeys.of("sale").into(DROPDOWN_VACANCY), // Simular la escritura de "test" en el campo del dropdown
+                SendKeys.of("payroll").into(DROPDOWN_VACANCY), // Simular la escritura de "test" en el campo del dropdown
                 Hit.the(Keys.ENTER).into(DROPDOWN_VACANCY)
         );
         actor.attemptsTo(Enter.theValue(Keys.BACK_SPACE).into(TXT_EMAIL));
