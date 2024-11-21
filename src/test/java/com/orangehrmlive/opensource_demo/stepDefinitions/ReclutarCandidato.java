@@ -24,10 +24,9 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 public class ReclutarCandidato {
 
     @Before
-    public void setUser(){
+    public void setUser() {
         OnStage.setTheStage(new OnlineCast());
     }
-
 
 
     @Cuando("que el usuario abra el navegador en la url")
@@ -100,20 +99,14 @@ public class ReclutarCandidato {
 
     @Entonces("verifica que el candidato está en la lisa con estado del candidato es Contratado")
     public void verifica_que_el_candidato_está_en_la_lista() {
-        theActorCalled("usuario").attemptsTo(ClicReclutamiento.ClicPaginaReclutamiento());
-
         theActorCalled("usuario").attemptsTo(
-                VerificarTextoEnTabla.conElTexto("payroll"),
-                VerificarTextoEnTabla.conElTexto("Juan Camilo Anacona"),
-                VerificarTextoEnTabla.conElTexto("Hired")
+                ClicReclutamiento.ClicPaginaReclutamiento(),
+                VerificarTextoEnTabla.compararConExcel() // Aquí ya compara los datos con el Excel directamente
         );
 
+
+// Si la espera implícita es indispensable, mantenla.
         EsperaImplicita.esperaImplicita(10);
+
     }
-
-
-
-
-
-
 }
